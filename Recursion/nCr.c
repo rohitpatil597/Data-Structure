@@ -11,6 +11,11 @@ int fact(int n)
 int ncr(int n, int r)
 {
     int t0,t1,t2;
+    
+    if(r==0 || n==r)
+    return 1;
+    else
+    
     t0=fact(n);
     t1=fact(r);
     t2=fact(n-r);
