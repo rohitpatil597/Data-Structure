@@ -1,54 +1,47 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct arr{
+struct Arr{
     int *data;
     int size;
     int len;
 };
 
-void delete(struct arr A,int pos)
-{
-    int x,i;
-    for(i=pos;i<A.len-1;i++)
-    {
-    A.data[i]=A.data[i+1];
-    }
-    A.len--;
-}
-void display(struct arr A)
+void display(struct Arr A)
 {
     int i;
-    for(i=0;i<A.len-1;i++)
-    printf("%d",A.data[i]);
+    for(i=0;i<A.len;i++)
+    {
+        printf("%d ",A.data[i]);
+    }
+}
+void delete(struct Arr *A,int pos)
+{
+    int i;
+    for(i=pos;i<A->len-1;i++)
+    A->data[pos]=A->data[i+1];
+    A->len--;
 }
 int main()
 {
-    struct arr A;
-    int x,i;
-    
-    printf("Enter the size\n");
+    struct Arr A;
+    int i;
+    printf("Enter the size array\n");
     scanf("%d",&A.size);
     
     A.data=(int *)malloc(A.size *sizeof(int));
     
-    printf("Enter the Lenght\n");
+    printf("Enter the len array\n");
     scanf("%d",&A.len);
     
-    printf("Enter the Element:");
-    
+    printf("Enter the element\n");
     for(i=0;i<A.len;i++)
     {
     scanf("%d",&A.data[i]);
     }
-    printf("Total Element is: ");
-    for(i=0;i<A.len;i++)
-    {
-    printf("%d",A.data[i]);  
-    }
-    printf("\nAfter Deleting total element:");
 
-    delete(A,4);
+    delete(&A,3);
     display(A);
     return 0;
 }
+
