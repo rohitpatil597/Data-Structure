@@ -3,49 +3,47 @@ enter the element in the array at last poisition
 
 */
 
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-struct arr{
+struct Arr{
     int *data;
     int size;
     int len;
 };
 
-
-void display(struct arr A)
+void display(struct Arr A)
 {
-    printf("print the data\n");
-    for(int i=0;i<=A.len;i++)
+    int i;
+    for(i=0;i<A.len;i++)
     {
         printf("%d",A.data[i]);
     }
 }
-void Insert(struct arr A,int x)
+void append(struct Arr *A,int x)  
 {
-  //Add the data in append
-   A.data[A.len]=x;
+     A->data[A->len]=x;
+     A->len++;
 }
 int main()
 {
-   struct arr A;
-   int i,x;
-   printf("enter the size in Array \n");
-   scanf("%d",&A.size);
-   
-   A.data= (int *)malloc(A.size * sizeof(int));
-   
-   printf("enter the len of Array \n");
-   scanf("%d",&A.len);
-   
-   printf("enter the element in Array \n");
-   for(i=0;i<A.len;i++)
-   {
-   scanf("%d",&A.data[i]);
-   }
-
-   Insert(A,6);
-   display(A);
-
-   return 0; 
+    struct Arr A;
+    int i;
+    printf("Enter the size array\n");
+    scanf("%d",&A.size);
+    
+    A.data=(int *)malloc(A.size *sizeof(int));
+    
+    printf("Enter the len array\n");
+    scanf("%d",&A.len);
+    
+    printf("Enter the element\n");
+    for(i=0;i<A.len;i++)
+    {
+    scanf("%d",&A.data[i]);
+    }
+    append(&A,6);
+    
+    display(A);
+    return 0;
 }
