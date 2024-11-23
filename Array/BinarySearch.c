@@ -36,10 +36,10 @@ int main()
 {
     struct array arr={{2,3,4,9,6,13,23,75,82,94},11,11};
     display(arr);
-    int x=Binary_search(arr,4);
+    int x=Binary_search(arr,82);
     if(x)
     {
-        printf("found\n");
+        printf("\nfound at %d position",x);
     }
     else
     {
