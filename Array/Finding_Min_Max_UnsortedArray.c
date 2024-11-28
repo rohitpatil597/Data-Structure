@@ -1,35 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
-struct array{
-    int A[10];
-    int size;
-    int length;
-};
 
-void max_min(struct array a)
-{
-    int i,j;
-   int max,min;
-   max=a.A[0];
-   min=a.A[0];
-    for(i=1;i<a.length-1;i++)
-    {
-         if(a.A[i] < min)
-         {
-            min=a.A[0]; 
-         }
-         else if (a.A[i] > max)
-         {
-             max=a.A[i]; 
-         }
+int A[]={3,2,1,0,5,7,9,38};
 
-    }
-    printf("Max=%d and Min=%d",max,min);
-
-}
 int main()
 {
-    struct array a={{1,7,4,2,-1,5,6,33},10,10};
-    max_min(a);
+    int i,j;
+    int max=A[0];
+    int min=A[0];
+    int n=sizeof(A)/sizeof(A[0]);
+    for(i=0;i<=n-1;i++)
+    {
+     if(A[i] < min)
+     min=A[i];
+     else if (A[i] > max)
+     max=A[i];
+    }
+    printf("max %d min %d",max,min);
     return 0;
 }
