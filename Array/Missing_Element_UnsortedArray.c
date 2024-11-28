@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
  int A[]={2,7,9,6,10,3,9,8};
- int H[10]={0,0,0,0,0,0,0,0,0,0};
+ int H[10];
  
 int main()
 {
