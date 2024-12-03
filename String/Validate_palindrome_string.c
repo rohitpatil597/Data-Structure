@@ -1,24 +1,36 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main ()
+int main()
 {
-char A[]="madam";
-char B[]="madam";
+    char A[]="madam";
+    char B[7];
+    int i,j;
+    for(i=0;A[i] !='\0';i++)
+    {
+        
+    }
+    i=i-1;
+    for(j=0;i>=0;j++,i--)
+    {
+        B[j]=A[i];
+    }
+    B[j]='\0';
+    printf("%s\n",B);
+    
+    for(i=0;A[i]!='\0';i++)
+    {
+       if(A[i]!=B[i])
+       {
+            printf("Its is not palindrome");
+            break;
+       }
+       
+    }
+    if(A[i]==B[i])
+    {
+    printf("Its palindrome");
+    }
 
-int i,j;
-
-for(i=0;A[i] !='\0';i++);
-for(j=0;B[j] !='\0';j++);
-
-for(i=0,j=j-1;A[i] !='\0' && B[j] !='\0';i++,j--)
-{
-    if(A[i]!=B[j])
-    break;
-}
-
-if(A[i]==B[j])
-printf("Its palindrom string");
-else
-printf("Its Not palindrom string");
-return 0;
+    return 0;
 }
