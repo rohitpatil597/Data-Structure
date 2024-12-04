@@ -1,27 +1,25 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main ()
+int main()
 {
-char A[10]="Finding";
-int i,j,count=0;
-for(i=0;A[i] !='\0';i++)
-{
-    for(j=i+1;A[j] !='\0';j++)
+    char A[]="Finding";
+    int i,j;
+    int count;
+    for(i=0;A[i] !='\0';i++)
     {
-        if (A[i]==A[j])
+        for(j=i+1;A[j]!='\0';j++)
         {
-         count++;
-         A[i]=0;
+            if(A[i]==A[j])
+            {
+            count++;
+            printf("%c\n",A[i]);
+            }
         }
     }
-}
-if(count)
-{
-    printf("Find duplicate %d",count+1);
-}
-else
-{
-    printf("Not found duplicate");
-}
-return 0;
+    if(!count)
+    {
+         printf("Not Found in the string");
+    }
+    return 0;
 }
