@@ -30,7 +30,7 @@ void bubble_sort(int A[],int k)
     
     for(i=0;i<k;i++)
     {
-    printf("%d",A[i]);
+    printf("%d ",A[i]);
     }
 }
 int main()
